@@ -1,11 +1,13 @@
-# LaravelRedshift
+# Laravel Redshift
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
 [![Build Status][ico-travis]][link-travis]
 [![StyleCI][ico-styleci]][link-styleci]
 
-This is where your description should go. Take a look at [contributing.md](contributing.md) to see a to do list.
+Redshift is compatible with Postgresql.
+However, not everything in Postgresql is compatible, and there are some data types that cannot be used.
+This library exists to absorb them and make it possible to handle Redshift on Laravel cleanly.
 
 ## Installation
 
@@ -16,6 +18,33 @@ $ composer require yuk1/laravel-redshift
 ```
 
 ## Usage
+
+Add the Redshift driver to `config/database.php`.
+
+```config/database.php
+'connections' => [
+  'redshift' => [
+    'driver' => 'redshift',
+      'host' => env('AWS_REDSHIFT_HOST', '127.0.0.1'),
+      'port' => env('AWS_REDSHIFT_PORT', '5439'),
+      'database' => env('AWS_REDSHIFT_DATABASE', 'redshit'),
+      'username' => env('AWS_REDSHIFT_USERNAME', 'root'),
+      'password' => env('AWS_REDSHIFT_PASSWORD', ''),
+    ],
+  ],
+]
+```
+
+Then, write the connection information in the .env file.
+
+```.env
+DB_CONNECTION=redshift
+AWS_REDSHIFT_HOST=
+AWS_REDSHIFT_PORT=
+AWS_REDSHIFT_DATABASE=
+AWS_REDSHIFT_USERNAME=
+AWS_REDSHIFT_PASSWORD=
+```
 
 ## Change log
 
@@ -37,7 +66,7 @@ If you discover any security related issues, please email author email instead o
 
 ## Credits
 
-- [author name][link-author]
+- [YuK1Game][link-author]
 - [All Contributors][link-contributors]
 
 ## License
