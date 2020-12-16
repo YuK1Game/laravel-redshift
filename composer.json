@@ -1,7 +1,7 @@
 {
     "name": "yuk1/laravel-redshift",
     "description": ":package_description",
-    "license": "license",
+    "license": "MIT",
     "authors": [
         {
             "name": "YuK1Game",
