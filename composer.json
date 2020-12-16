@@ -4,13 +4,12 @@
     "license": "license",
     "authors": [
         {
-            "name": "author name",
-            "email": "author email",
-            "homepage": "author homepage"
+            "name": "YuK1Game",
+            "email": "develop@yuk1.jp"
         }
     ],
     "homepage": "https://github.com/yuk1/laravel-redshift",
-    "keywords": ["Laravel", "LaravelRedshift"],
+    "keywords": ["Laravel", "Redshift"],
     "require": {
         "illuminate/support": "~7|~8"
     },
