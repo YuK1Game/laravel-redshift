@@ -32,10 +32,7 @@
         "laravel": {
             "providers": [
                 "YuK1\\LaravelRedshift\\LaravelRedshiftServiceProvider"
-            ],
-            "aliases": {
-                "LaravelRedshift": "YuK1\\LaravelRedshift\\Facades\\LaravelRedshift"
-            }
+            ]
         }
     }
 }
