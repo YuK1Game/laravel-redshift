@@ -59,12 +59,12 @@ class Blueprint extends IlluminateBlueprint
     /**
      * Debug
      */
-    public function build($connection, $grammar)
-    {
-        foreach ($this->toSql($connection, $grammar) as $statement) {
-            dump($statement);
-        }
+    // public function build($connection, $grammar)
+    // {
+    //     foreach ($this->toSql($connection, $grammar) as $statement) {
+    //         dump($statement);
+    //     }
 
-        parent::build($connection, $grammar);
-    }
+    //     parent::build($connection, $grammar);
+    // }
 }
