@@ -56,4 +56,15 @@ class Blueprint extends IlluminateBlueprint
         return $this->distStyleType ? [ $this->distStyleType, $this->distStyleKey ] : [];
     }
 
+    /**
+     * Debug
+     */
+    public function build($connection, $grammar)
+    {
+        foreach ($this->toSql($connection, $grammar) as $statement) {
+            dump($statement);
+        }
+
+        parent::build($connection, $grammar);
+    }
 }

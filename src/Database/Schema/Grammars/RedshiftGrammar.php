@@ -8,6 +8,30 @@ use YuK1\LaravelRedshift\LaravelRedshiftException;
 
 class RedshiftGrammar extends PostgresGrammar
 {
+    protected function getColumns(Blueprint $blueprint)
+    {
+        $columns = [];
+
+        foreach ($blueprint->getAddedColumns() as $column) {
+            $sql = $this->wrap($column).' '.$this->getType($column);
+
+            /**
+             * Add Redshift-specific encoding settings
+             */
+            if ($encode = $this->getEncode($column)) {
+                $sql .= ' '.$encode;
+            }
+
+            $columns[] = $this->addModifiers($sql, $blueprint, $column);
+        }
+
+        return $columns;
+    }
+
+    protected function getEncode(Fluent $column) {
+        return $column->encode !== null ? 'encode '.$column->encode : null;
+    }
+
     protected function generatableColumn($type, Fluent $column)
     {
         if (! $column->autoIncrement && is_null($column->generatedAs)) {
