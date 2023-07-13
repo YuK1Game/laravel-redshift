@@ -11,7 +11,7 @@
     "homepage": "https://github.com/yuk1/laravel-redshift",
     "keywords": ["Laravel", "Redshift"],
     "require": {
-        "illuminate/support": "~7|~8"
+        "illuminate/support": ">= 7.0"
     },
     "require-dev": {
         "phpunit/phpunit": "~9.0",
